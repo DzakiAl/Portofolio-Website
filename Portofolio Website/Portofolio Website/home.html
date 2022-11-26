@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzaki Al's Website</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2C2B2B;
+        }
+
+        header {
+            background-color: #2C2B2B;  
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 6vw;
+            position: fixed;
+            top: 0;
+            width: 95vw;
+        }
+
+        .menu {
+            display: flex;
+            font-size: 1.3vw;
+            margin: auto;
+        }
+
+        .menu li a {
+            padding: 1vw 3vw;
+            cursor: pointer;
+            border-radius: 1vw;
+        }
+
+        header .menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        header .menu li a:hover {
+            background-color: white;
+            border-radius: 1vw;
+            transition: all ease-in-out 0.5s;
+            color: black;
+        }
+
+        header .menu li {
+            list-style: none;
+            padding: 1vw 0.5vw;
+        }
+
+        header .menu .dropdown {
+            display: none;
+        }
+
+        header ul li:hover .dropdown {
+            display: block;
+            background-color: transparent;
+            position: absolute;
+            margin-top: 1vw;
+            padding: 0.5vw;
+            border-radius: 1vw;
+            background-color: rgba(255, 255, 255, .15);  
+            backdrop-filter: blur(5px);
+            transition: all ease-in-out 0.5s;
+        }
+
+        .greeting {
+            font-size: 7vw;
+            color: white;
+            padding-top : 10vw;
+            text-align: center;
+        }
+
+        .justsomesentence{
+            font-size: 3vw;
+            color: white;
+            text-align: center;
+        }
+
+        .title {
+            color: white;
+            text-align: center;
+            font-size: 5vw;
+            padding-top: 15vw;
+        }
+
+        .sentence {
+            color: white;
+            text-align: center;
+            font-size: 1.8vw;
+        }
+
+        .myskills {
+            padding-top: 15vw;
+            font-size: 5vw;
+            text-align: center;
+            color: white;
+        }
+
+        .codehtml {
+            color: white;
+            font-size: 3vw;
+            margin-right: 9vw;
+        }
+
+        .codecss {
+            color: white;
+            font-size: 3vw;
+            margin-right: 11.3vw;
+        }
+
+        .codejs {
+            color: white;
+            font-size: 3vw;
+            margin-right: 2vw;
+        }
+
+        .percentagehtml {
+            display: inline-block;
+            color: white;
+            font-size: 3vw;
+            border: 0.5vw solid white;
+            width: 8vw;
+            height: 8vw;
+            line-height: 8vw;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 7vw;
+        }
+
+        .percentagecss {
+            display: inline-block;
+            color: white;
+            font-size: 3vw;
+            border: 0.5vw solid white;
+            width: 8vw;
+            height: 8vw;
+            line-height: 8vw;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 7vw;
+            margin-bottom: 12.5vw;
+        }
+
+        .percentagejs {
+            display: inline-block;
+            color: white;
+            font-size: 3vw;
+            border: 0.5vw solid white;
+            width: 8vw;
+            height: 8vw;
+            line-height: 8vw;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        @media (orientation: portrait) and (max-width: 480px) {
+            header {
+            width: 90vw;
+        }
+
+            .greeting {
+                padding-top: 65vw;
+                font-size: 10vw;
+            }
+
+            .justsomesentence {
+                font-size: 5vw;
+                margin: 2vw;
+                margin-left: 15vw;
+                margin-right: 15vw;
+            }
+
+            .title {
+                padding-top: 63.5vw;
+                font-size: 10vw;
+            }
+
+            .sentence {
+                margin-left: 10vw;
+                margin-right: 10vw;
+                font-size: 4vw;
+            }
+
+            .myskills {
+                margin-bottom: 5vw;
+                font-size: 8vw;
+                padding-top: 65.5vw;
+            }
+
+            .codehtml {
+                font-size: 4vw;
+                margin-right: 13vw;
+            }
+
+            .codecss {
+                font-size: 4vw;
+                margin-right: 8vw;
+            }
+
+            .codejs {
+                font-size: 4vw;
+                margin-left: 7vw;
+                margin-right: 3vw;
+            }
+
+            .percentagehtml {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+            }
+
+            .percentagecss {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+                margin-bottom: 75vw;
+            }
+
+            .percentagejs {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+            }
+        }
+
+        @media (orientation: portrait) and (max-width: 1024px) and (min-width: 480px){
+            .greeting {
+                padding-top: 49vw;
+                font-size: 11vw; 
+            }
+
+            .justsomesentence {
+                font-size: 4vw;
+                margin: 2vw;
+                margin-left: 10vw;
+                margin-right: 10vw;
+            }
+
+            .title {
+                padding-top: 45vw;
+                font-size: 10vw;
+            }
+
+            .sentence {
+                margin-left: 10vw;
+                margin-right: 10vw;
+                font-size: 4vw;
+            }
+
+
+            .myskills {
+                margin-bottom: 5vw;
+                font-size: 8vw;
+                padding-top: 45vw;
+            }
+
+            .codehtml {
+                font-size: 4vw;
+                margin-right: 13vw;
+            }
+
+            .codecss {
+                font-size: 4vw;
+                margin-right: 8vw;
+            }
+
+            .codejs {
+                font-size: 4vw;
+                margin-left: 7vw;
+                margin-right: 3vw;
+            }
+
+            .percentagehtml {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+            }
+
+            .percentagecss {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+                margin-bottom: 55vw;
+            }
+
+            .percentagejs {
+                width: 13vw;
+                height: 13vw;
+                line-height: 13vw;
+                font-size: 4vw;
+                border: 0.8vw solid;
+            }
+        }
+    </style>
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <header>
+            <ul class="menu">
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">About me</a></li>
+                <li><a href="#section3">My Skills</a></li>
+                <li>
+                    <a>My Social</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.instagram.com/dzakial___/">Instagram</a></li>
+                        <li><a href="https://github.com/DzakiAl">Github</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <!--opening-->
+    <h1 class="greeting" id="section1">Hello there,</h1>
+    <h1 class="justsomesentence">My name is Dzaki Al</h1>
+    <h1 class="justsomesentence">Iam a Front End Web Developer</h1>
+    <!--aboutme-->
+    <h1 class="title" id="section2">About me</h1>
+    <p class="sentence">
+        Hello there, My name is Dzaki Al. You can call me Dzaki or Al depends what you want call me<br>
+        so iam a Front End Web Developer actually still junior. Iam still learning about coding especially<br>
+        about website but front end part, so yeah that was about me. Thanks.
+     </p>
+    <!--myskills-->
+    <center>
+    <h1 class="myskills" id="section3">My Skills</h1>
+    <a class="codehtml">HTML</a>
+    <a class="codecss">CSS</a>
+    <a class="codejs">JS</a><br>
+    <a class="percentagehtml">50%</a>
+    <a class="percentagecss">25%</a>
+    <a class="percentagejs">5%</a>
+    </center>
+</body>
+</html>
